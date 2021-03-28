@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HackMe</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+<script>
+    function show() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+} 
+</script>
+</head>
+
+<body>
+<div class="hero is-fullheight is-primary">
+	<div class="hero-body">
+		<div class="container">
+			<div class="columns is-centered"> <div class="column is-4">
+				<div class="container">
+					<div class="box">
+					<h1 class="has-text-centered title is-4 has-text-dark">Login</h1>
+					<p class="help has-text-centered">sql injection doesnt work with me ;) </p>
+<form action="login.php" method="POST" class="form is-white">
+	<div class="field">
+		<label>Username:</label>
+		 <input type="text" name="username" id="username" onkeyup="validate()" required/>
+	</div>
+	<div class="field">
+		<label>Password:</label>
+		 <input type="password" id="password" name="password" onkeyup="validate()" required/>
+		 <p class="help">
+		 <input type="checkbox" onclick="show()" >Show password
+		 </p>
+	</div>
+	<div class="field is-grouped is-grouped-centered">
+		<p class="control">
+		<input class="is-centered" type="submit" value="Login" id="submit" />
+	</p>
+	</div>
+</form>
+<script>
+var scheme = /[a-zA-Z0-9]/g;
+    var uName = document.getElementById("username");
+    var pwd = document.getElementById("password");
+function validate(){
+    
+    if(uName.value.match(scheme).length === uName.value.length &&pwd.value.match(scheme).length === pwd.value.length){
+         document.getElementById("submit").disabled = false; 
+    }else{
+        document.getElementById("submit").disabled = true; 
+    }
+}
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
