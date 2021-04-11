@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HackMe</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+
+<body>
+<div class="hero is-fullheight is-primary">
+	<div class="hero-body">
+		<div class="container">
+			<div class="columns is-centered"> <div class="column is-4">
+				<div class="container">
+					<div class="box">
+					<h1 class="has-text-centered title is-4 has-text-dark">Signup</h1>
+<form action="signup.php" method="POST" class="form is-white">
+	<div class="field">
+		<label>Username:</label>
+		<div class="control">
+		 <input type="text" name="username" id="username" onkeyup="validate()" required/>
+		 </div>
+	</div>
+	<div class="field">
+		<label>Password:</label>
+		<div class="control">
+		 <input type="password" id="password" name="password" onkeyup="validate()" required/>
+		 </div>
+	</div>
+	<div class="field">
+		<label>Retype Password:</label>
+		<div class="control">
+		 <input type="password" id="repassword" name="repassword" onkeyup="validate()" required/>
+		 </div>
+	</div>
+	<div class="field">
+		<label>Email:</label>
+		<div class="control">
+		 <input type="email" id="email" name="email" onkeyup="validate()" required/>
+		 </div>
+	</div>
+	<div class="field">
+		<label>Date of Birth:</label>
+		<div class="control">
+		 <input type="date" id="dob" name="dob" onkeyup="validate()" required/>
+		 </div>
+	</div>
+	<div class="field is-grouped is-grouped-centered">
+		<p class="control">
+		<input class="is-centered" type="submit" value="Signup" id="submit" />
+	</p>
+	</div>
+</form>
+<p class="help has-text-centered">
+    Have an account?
+    <label class="has-text-link">
+	<a  href="https://websecurity101-1.000webhostapp.com/">login</a>
+	</label>
+</p>
+<script>
+var mailscheme = /\w+@\w+\.\w+/g;
+var scheme = /[\w!#$%&*]/g;
+var datescheme = /^\d{4}-([0][0-9]|10|11|12)-[0-3][0-9]$/g;
+    var uName = document.getElementById("username");
+    var pwd = document.getElementById("password");
+    var repwd = document.getElementById("repassword");
+    var mail = document.getElementById("email");
+    var DoB = document.getElementById("dob");
+function validate(){
+    if(uName.value.match(scheme).length === uName.value.length && pwd.value.match(scheme).length === pwd.value.length && pwd.value===repwd.value && mail.value.match(mailscheme)[0]===mail.value && DoB.value.match(datescheme)[0]===DoB.value ){
+         document.getElementById("submit").disabled = false; 
+    }else{
+        document.getElementById("submit").disabled = true; 
+    }
+}
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
