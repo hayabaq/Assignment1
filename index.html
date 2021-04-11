@@ -44,17 +44,21 @@
 	</p>
 	</div>
 </form>
+<p class="help has-text-centered is-link">
+		<a href="https://websecurity101-1.000webhostapp.com/signup.html">Create new account</a>
+		 </p>
 <script>
-var scheme = /[a-zA-Z0-9]/g;
+var scheme = /[\w!#$%&*]/g;
     var uName = document.getElementById("username");
     var pwd = document.getElementById("password");
 function validate(){
     
-    if(uName.value.match(scheme).length === uName.value.length &&pwd.value.match(scheme).length === pwd.value.length){
+    if(uName.value.match(scheme).length === uName.value.length && pwd.value.match(scheme).length === pwd.value.length){
          document.getElementById("submit").disabled = false; 
     }else{
         document.getElementById("submit").disabled = true; 
     }
+    
 }
 </script>
 </div>
