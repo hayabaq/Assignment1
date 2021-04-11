@@ -11,8 +11,8 @@ mysqli_stmt_prepare($stmt,$safe_query);
 mysqli_stmt_bind_param($stmt, "ss", $username,$password);
 $auth=	mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
+$res=mysqli_fetch_array($result, MYSQLI_NUM);
 $count = mysqli_num_rows($result);
-
 }
 ?>
 
@@ -31,10 +31,12 @@ $count = mysqli_num_rows($result);
 		    <div class="columns is-centered"> <div class="column is-4">
 				<div class="container">
 					<div class="box has-text-centered">
-					    <?php if($count>0): ?>
-					<h1 class=" subtitle is-5 has-text-dark">You cracked our Admin account <b class="has-text-primary">Successfully</b></h1>
+					    <?php if($count==1 && $res[0]=='admin'):?>
+					<h1 class=" subtitle is-5 has-text-dark">You cracked our Admin<b class="has-text-primary">Successfully</b></h1>
 					<p class="has-text-dark">Here is your flag</p>
 					<p class="has-text-dark">flag{h@yA-!s-ThE-Be$t}</p>
+					<?php elseif($count==1):?>
+					<h1 class=" subtitle is-5 has-text-dark">You logged in <b class="has-text-primary">Successfully</b></h1>
 					<?php else: ?>
 					<h1 class="subtitle is-5 has-text-danger">It didnt work</h1>
 						<a class="has-text-link has-text-dark" href='https://websecurity101-1.000webhostapp.com/'>Try again</a>
