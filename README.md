@@ -13,6 +13,10 @@ The purpose is to prevent sql injection using multiple methods
 
 4- stored procedure 
 
+**Some changes applied to meet the requirement of assignment 2
+# Assignment2
+A registeration page was created which validate user input before POST 
+
 # Demo
 
 https://websecurity101-1.000webhostapp.com/
